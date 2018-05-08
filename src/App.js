@@ -14,7 +14,6 @@ class App extends Component {
   // ADDED
   componentWillMount() {
     this.setState({
-      zipCode: '',
       forecast: []
     });
   }
@@ -27,7 +26,7 @@ class App extends Component {
     weatherService.getForecast(zipCode).then((result) => {
       _this.setState({forecast: result.data.list});
     });
-  }
+  };
 
   render() {
     return (

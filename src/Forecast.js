@@ -1,17 +1,28 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import ForecastCard from "./ForcastCard";
 
 export default class Forecast extends Component {
     render() {
-        return(
-            <div>
-                <ul>
+      let lastDate;
+      let currentDate;
+      return(
+            <div style={{display: "flex", flexWrap: "wrap"}}>
                 {
-                    this.props.data.map((x, index) => {
-                        return(<li key={index}>{x.dt_txt} - {x.weather[0].description}</li>);
+                    this.props.data.map((row, index) => {
+                      let result = [];
+                      currentDate = row.dt_txt.split(" ")[0];
+
+                      if (lastDate && lastDate !== currentDate) {
+                        result.push(<ForecastCard key={index}/>)
+                      }
+
+                      result.push(<ForecastCard key={index} data={row}/>);
+
+                      lastDate = currentDate;
+                      return(result);
                     })
                 }
-                </ul>
             </div>
         );
     }
