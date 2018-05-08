@@ -14,7 +14,7 @@ export default class Forecast extends Component {
                       currentDate = row.dt_txt.split(" ")[0];
 
                       if (lastDate && lastDate !== currentDate) {
-                        result.push(<ForecastCard key={index}/>)
+                        result.push(<ForecastCard key={index + "spacer"}/>)
                       }
 
                       result.push(<ForecastCard key={index} data={row}/>);

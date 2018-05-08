@@ -21,5 +21,5 @@ export const Temperature = ({temperature}) => {
 };
 
 Temperature.propTypes = {
-  temperature: PropTypes.string
+  temperature: PropTypes.number
 };

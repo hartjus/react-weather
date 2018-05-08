@@ -21,10 +21,9 @@ class App extends Component {
   // ADDED
   onZipInputChange = (zipCode) => {
     this.setState({zipCode});
-
-    const _this = this;
     weatherService.getForecast(zipCode).then((result) => {
-      _this.setState({forecast: result.data.list});
+      this.setState({forecast: result.data.list});
+      console.log(result.data.list);
     });
   };
 
