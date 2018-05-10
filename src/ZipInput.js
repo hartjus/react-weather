@@ -10,11 +10,10 @@ export default class ZipInput extends Component {
       this.state = {
           zipCode: ""
       }
-
     }
+
     onInputChange = (event) => {
         const {value} = event.target;
-
         this.setState({zipCode: value});
     };
 

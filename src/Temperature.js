@@ -9,7 +9,7 @@ export const Temperature = ({temperature}) => {
 
     let tempColor = () => {
       if (temperature > 292) return "red";
-      if (temperature < 290) return "blue";
+      if (temperature < 289) return "blue";
       return "green";
     };
 

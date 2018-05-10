@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import ForecastCard from "./ForcastCard";
+import ForecastCard from "./ForecastCard";
 
 export default class Forecast extends Component {
     render() {

@@ -26,12 +26,10 @@ export default class ForecastCard extends Component {
       <div style={cardStyle}>
         {this.props.data &&
           <div style={dataBlockStyle}>
-            {this.props.data.dt_txt}
+            <div>{this.props.data.dt_txt}</div>
             <Temperature temperature={this.props.data.main.temp}/>
             <img src={`http://openweathermap.org/img/w/${this.props.data.weather[0].icon}.png`} alt=""/>
-            <div>
-              {this.props.data.weather[0].description}
-            </div>
+            <div>{this.props.data.weather[0].description}</div>
           </div>
         }
       </div>
