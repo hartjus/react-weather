@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import ForecastCard from "./ForecastCard";
+import ForecastCard from './ForecastCard';
 
-export default class Forecast extends Component {
+import {connect} from 'react-redux';
+
+class Forecast extends Component {
     render() {
       let lastDate;
       let currentDate;
@@ -31,3 +33,12 @@ export default class Forecast extends Component {
 Forecast.propTypes = {
     data: PropTypes.array
 };
+
+const mapStateToProps = (store) => {
+    console.log(store.weather);
+    return {
+        data: store.weather.forecast
+    };
+};
+
+export default connect(mapStateToProps)(Forecast);

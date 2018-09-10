@@ -5,27 +5,27 @@ import './App.css';
 // ADDED
 import Forecast from './Forecast';
 import ZipInput from './ZipInput';
-import WeatherService from './WeatherService';
+// import WeatherService from './WeatherService';
 
-const weatherService = new WeatherService();
+// const weatherService = new WeatherService();
 
 class App extends Component {
 
-  // ADDED
-  componentWillMount() {
-    this.setState({
-      forecast: []
-    });
-  }
+  // // ADDED
+  // componentWillMount() {
+  //   this.setState({
+  //     forecast: []
+  //   });
+  // }
 
-  // ADDED
-  onZipInputChange = (zipCode) => {
-    this.setState({zipCode});
-    weatherService.getForecast(zipCode).then((result) => {
-      this.setState({forecast: result.data.list});
-      console.log(result.data.list);
-    });
-  };
+  // // ADDED
+  // onZipInputChange = (zipCode) => {
+  //   this.setState({zipCode});
+  //   weatherService.getForecast(zipCode).then((result) => {
+  //     this.setState({forecast: result.data.list});
+  //     console.log(result.data.list);
+  //   });
+  // };
 
   render() {
     return (
@@ -39,8 +39,8 @@ class App extends Component {
         </p>
 
         {/* ADDED */}
-        <ZipInput onChange={this.onZipInputChange} />
-        <Forecast data={this.state.forecast} />
+        <ZipInput />
+        <Forecast />
       </div>
     );
   }

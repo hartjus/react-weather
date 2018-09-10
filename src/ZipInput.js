@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 
+import {connect} from 'react-redux';
+import WeatherStore from './weather-store';
+
 // ADDED
 import PropTypes from 'prop-types';
 
-export default class ZipInput extends Component {
+class ZipInput extends Component {
 
     constructor(props) {
       super(props);
@@ -36,3 +39,18 @@ ZipInput.propTypes = {
     onChange: PropTypes.func,
     value: PropTypes.string
 };
+
+const mapStateToProps = (store) => {
+    return {
+        value: store.weather.zipCode
+    };
+};
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onChange: (zipCode) => {
+            dispatch(WeatherStore.updateZipCode(zipCode));
+        }
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ZipInput);
