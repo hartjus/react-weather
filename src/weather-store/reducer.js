@@ -1,5 +1,5 @@
 const defaultState = {
-    zipCode: '97224',
+    zipCode: '',
     forecast: []
 };
 
